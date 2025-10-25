@@ -12,7 +12,7 @@ const RoadmapPage = () => {
       time: '2025-10',
       title: 'Contract Audit & Community Setup',
       description: 'Smart contract audit completion, official community establishment, and website launch.',
-      status: 'upcoming',
+      status: 'upcoming' as const,
       icon: CheckCircle
     },
     {
@@ -20,7 +20,7 @@ const RoadmapPage = () => {
       time: '2025-11',
       title: 'First Airdrop & Community Activities',
       description: 'Launch 1% token airdrop and initiate community interaction activities to build engagement.',
-      status: 'upcoming',
+      status: 'upcoming' as const,
       icon: Gift
     },
     {
@@ -28,7 +28,7 @@ const RoadmapPage = () => {
       time: '2025-12',
       title: 'Community Growth',
       description: 'Expand community to 5,000+ active members through targeted marketing and engagement campaigns.',
-      status: 'upcoming',
+      status: 'upcoming' as const,
       icon: Users
     },
     {
@@ -36,7 +36,7 @@ const RoadmapPage = () => {
       time: '2026-01',
       title: 'Meme Campaigns & Promotion',
       description: 'Launch meme campaigns and token promotion activities to increase awareness and adoption.',
-      status: 'upcoming',
+      status: 'upcoming' as const,
       icon: TrendingUp
     },
     {
@@ -44,7 +44,7 @@ const RoadmapPage = () => {
       time: '2026-02',
       title: 'Exchange Listings & Liquidity',
       description: 'List on major exchanges or DEX platforms and increase liquidity for better trading experience.',
-      status: 'upcoming',
+      status: 'upcoming' as const,
       icon: Globe
     }
   ];
@@ -54,19 +54,19 @@ const RoadmapPage = () => {
       icon: Rocket,
       title: 'Project Launch',
       description: 'Official launch of EasyGirl (EGIRL) token with initial community building',
-      status: 'completed'
+      status: 'completed' as const
     },
     {
       icon: Users,
       title: 'Community Building',
       description: 'Establishing core community and social media presence',
-      status: 'current'
+      status: 'current' as const
     },
     {
       icon: TrendingUp,
       title: 'Market Expansion',
       description: 'Growing market presence and increasing token adoption',
-      status: 'upcoming'
+      status: 'upcoming' as const
     }
   ];
 
