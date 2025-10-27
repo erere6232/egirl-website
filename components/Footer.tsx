@@ -98,10 +98,9 @@ const Footer = () => {
               </Link>
             </div>
           </div>
-          <div className="mt-4 p-4 bg-yellow-500/10 border border-yellow-500/20 rounded-lg">
-            <p className="text-yellow-200 text-sm text-center">
-              ⚠️ This project is for entertainment and discussion purposes only. 
-              Not financial advice. Please DYOR (Do Your Own Research).
+          <div className="mt-4 text-center">
+            <p className="text-gray-600 text-xs opacity-30">
+              Not financial advice
             </p>
           </div>
         </div>
