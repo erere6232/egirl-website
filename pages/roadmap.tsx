@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion';
-import Head from 'next/head';
 import { Calendar, Users, Gift, TrendingUp, Globe, Rocket, CheckCircle, Clock, Target } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import RoadmapItem from '../components/RoadmapItem';
+import SEO from '../components/SEO';
 
 const RoadmapPage = () => {
   const roadmapData = [
@@ -12,7 +12,7 @@ const RoadmapPage = () => {
       time: '2025-10',
       title: 'Contract Audit & Community Setup',
       description: 'Smart contract audit completion, official community establishment, and website launch.',
-      status: 'upcoming' as const,
+      status: 'upcoming',
       icon: CheckCircle
     },
     {
@@ -20,7 +20,7 @@ const RoadmapPage = () => {
       time: '2025-11',
       title: 'First Airdrop & Community Activities',
       description: 'Launch 1% token airdrop and initiate community interaction activities to build engagement.',
-      status: 'upcoming' as const,
+      status: 'upcoming',
       icon: Gift
     },
     {
@@ -28,7 +28,7 @@ const RoadmapPage = () => {
       time: '2025-12',
       title: 'Community Growth',
       description: 'Expand community to 5,000+ active members through targeted marketing and engagement campaigns.',
-      status: 'upcoming' as const,
+      status: 'upcoming',
       icon: Users
     },
     {
@@ -36,7 +36,7 @@ const RoadmapPage = () => {
       time: '2026-01',
       title: 'Meme Campaigns & Promotion',
       description: 'Launch meme campaigns and token promotion activities to increase awareness and adoption.',
-      status: 'upcoming' as const,
+      status: 'upcoming',
       icon: TrendingUp
     },
     {
@@ -44,7 +44,7 @@ const RoadmapPage = () => {
       time: '2026-02',
       title: 'Exchange Listings & Liquidity',
       description: 'List on major exchanges or DEX platforms and increase liquidity for better trading experience.',
-      status: 'upcoming' as const,
+      status: 'upcoming',
       icon: Globe
     }
   ];
@@ -54,28 +54,29 @@ const RoadmapPage = () => {
       icon: Rocket,
       title: 'Project Launch',
       description: 'Official launch of EasyGirl (EGIRL) token with initial community building',
-      status: 'completed' as const
+      status: 'completed'
     },
     {
       icon: Users,
       title: 'Community Building',
       description: 'Establishing core community and social media presence',
-      status: 'current' as const
+      status: 'current'
     },
     {
       icon: TrendingUp,
       title: 'Market Expansion',
       description: 'Growing market presence and increasing token adoption',
-      status: 'upcoming' as const
+      status: 'upcoming'
     }
   ];
 
   return (
     <>
-      <Head>
-        <title>Roadmap - EasyGirl (EGIRL)</title>
-        <meta name="description" content="EasyGirl (EGIRL) development roadmap and project milestones." />
-      </Head>
+      <SEO 
+        title="Roadmap"
+        description="EGIRL token development roadmap: phases, milestones, and future vision for community growth and expansion."
+        url="/roadmap"
+      />
       
       <div className="min-h-screen bg-gradient-to-br from-egirl-dark via-purple-900 to-egirl-dark">
         <Header />
