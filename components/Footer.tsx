@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Mail, Twitter, MessageCircle, ExternalLink } from 'lucide-react';
+import { Mail, Twitter, MessageCircle, ExternalLink, MessageSquare } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 const Footer = () => {
@@ -9,6 +9,11 @@ const Footer = () => {
       name: 'Twitter',
       href: 'https://twitter.com/EGIRL_BSC',
       icon: Twitter,
+    },
+    {
+      name: 'Discord',
+      href: 'https://discord.gg/3sKCjftfe2',
+      icon: MessageSquare,
     },
     {
       name: 'Email',
