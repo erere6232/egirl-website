@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Coins, Mail, Twitter, MessageCircle, ExternalLink } from 'lucide-react';
+import { Mail, Twitter, MessageCircle, ExternalLink } from 'lucide-react';
 
 const Footer = () => {
   const socialLinks = [
@@ -27,9 +27,13 @@ const Footer = () => {
           {/* Brand */}
           <div className="space-y-4">
             <Link href="/" className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-gradient-to-r from-egirl-pink to-egirl-purple rounded-full flex items-center justify-center">
-                <Coins className="w-6 h-6 text-white" />
-              </div>
+              <img 
+                src="/android-chrome-192x192.png" 
+                alt="EGIRL Logo" 
+                width={40} 
+                height={40}
+                className="rounded-full"
+              />
               <span className="text-2xl font-bold text-white">EGIRL</span>
             </Link>
             <p className="text-gray-300 text-sm leading-relaxed">
