@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion';
-import Head from 'next/head';
 import { Mail, Twitter, MessageCircle, ExternalLink, Copy, CheckCircle, Globe, Users, Heart } from 'lucide-react';
 import { useState } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import SEO from '../components/SEO';
 
 const ContactPage = () => {
   const [copied, setCopied] = useState(false);
@@ -23,7 +23,7 @@ const ContactPage = () => {
       title: 'Twitter',
       description: 'Follow us for updates',
       value: '@EGIRL_BSC',
-      link: 'https://twitter.com/EGIRL_BSC',
+      link: 'https://x.com/EGIRL_BSC',
       color: 'from-blue-400 to-blue-500'
     },
     {
@@ -39,7 +39,7 @@ const ContactPage = () => {
   const socialLinks = [
     {
       name: 'Twitter',
-      href: 'https://twitter.com/EGIRL_BSC',
+      href: 'https://x.com/EGIRL_BSC',
       icon: Twitter,
       description: 'Follow us for project updates'
     },
@@ -65,10 +65,11 @@ const ContactPage = () => {
 
   return (
     <>
-      <Head>
-        <title>Contact - EasyGirl (EGIRL)</title>
-        <meta name="description" content="Get in touch with the EasyGirl (EGIRL) team and community." />
-      </Head>
+      <SEO 
+        title="Contact"
+        description="Contact the EasyGirl (EGIRL) team via email, Twitter, Telegram, or join our growing community."
+        url="/contact"
+      />
       
       <div className="min-h-screen bg-gradient-to-br from-egirl-dark via-purple-900 to-egirl-dark">
         <Header />
