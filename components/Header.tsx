@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { useState } from 'react';
-import { Menu, X, Coins } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -19,9 +19,13 @@ const Header = () => {
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-gradient-to-r from-egirl-pink to-egirl-purple rounded-full flex items-center justify-center">
-              <Coins className="w-6 h-6 text-white" />
-            </div>
+            <img 
+              src="/android-chrome-192x192.png" 
+              alt="EGIRL Logo" 
+              width={40} 
+              height={40}
+              className="rounded-full"
+            />
             <span className="text-2xl font-bold text-white">EGIRL</span>
           </Link>
 
@@ -42,6 +46,7 @@ const Header = () => {
           <button
             className="md:hidden text-white"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Toggle menu"
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
