@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Mail, Twitter, MessageCircle, ExternalLink, Copy, CheckCircle, Globe, Users, Heart } from 'lucide-react';
+import { Mail, Twitter, MessageCircle, ExternalLink, Copy, CheckCircle, Globe, Users, Heart, MessageSquare } from 'lucide-react';
 import { useState } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -59,6 +59,12 @@ const ContactPage = () => {
       href: 'https://x.com/EGIRL_BSC',
       icon: Twitter,
       description: 'Follow us for project updates'
+    },
+    {
+      name: 'Discord',
+      href: 'https://discord.gg/3sKCjftfe2',
+      icon: MessageSquare,
+      description: 'Join our Discord server'
     },
     {
       name: 'Email',
