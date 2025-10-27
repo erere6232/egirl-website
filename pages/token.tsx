@@ -263,13 +263,13 @@ const TokenPage = () => {
                   <Download className="w-12 h-12 text-egirl-pink mx-auto mb-4" />
                   <h3 className="text-xl font-semibold text-white mb-4">Whitepaper</h3>
                   <p className="text-gray-300 mb-4">Download our complete project documentation</p>
-                  <a
-                    href="#"
+                  <Link
+                    href="/whitepaper"
                     className="btn-primary inline-flex items-center"
                   >
                     <Download className="w-5 h-5 mr-2" />
-                    Download PDF
-                  </a>
+                    View Whitepaper
+                  </Link>
                 </div>
                 
                 <div className="bg-egirl-dark/50 rounded-xl p-6 text-center hover:bg-egirl-dark/70 transition-all">
