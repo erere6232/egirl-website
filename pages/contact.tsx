@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Mail, Twitter, MessageCircle, ExternalLink, Copy, CheckCircle, Globe, Users, Heart, MessageSquare } from 'lucide-react';
+import { Mail, Twitter, MessageCircle, ExternalLink, Copy, CheckCircle, Globe, Users, Heart, MessageSquare, Send } from 'lucide-react';
 import { useState } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -11,20 +11,20 @@ const ContactPage = () => {
 
   const contactMethods = [
     {
-      icon: Mail,
-      title: 'Email',
-      description: 'Get in touch with our team',
-      value: email,
-      link: `mailto:${email}`,
-      color: 'from-blue-500 to-blue-600'
-    },
-    {
       icon: Twitter,
       title: 'Twitter',
       description: 'Follow us for updates',
       value: '@EGIRL_BSC',
       link: 'https://x.com/EGIRL_BSC',
       color: 'from-blue-400 to-blue-500'
+    },
+    {
+      icon: MessageSquare,
+      title: 'Discord',
+      description: 'Join our Discord server',
+      value: 'EGIRL Community',
+      link: 'https://discord.gg/3sKCjftfe2',
+      color: 'from-indigo-500 to-indigo-600'
     },
     {
       icon: MessageCircle,
@@ -41,14 +41,14 @@ const ContactPage = () => {
       name: '🇬🇧 English Community',
       description: 'Join our English Telegram',
       href: 'https://t.me/+VdZHL9gqOF5lNTI1',
-      icon: MessageCircle,
+      icon: Send,
       color: 'from-blue-500 to-blue-700'
     },
     {
       name: '🇨🇳 中文社区',
       description: '加入我们的中文电报群',
       href: 'https://t.me/+N7FUuuYJIdQyMjFl',
-      icon: MessageCircle,
+      icon: Send,
       color: 'from-green-500 to-green-600'
     }
   ];
@@ -59,12 +59,6 @@ const ContactPage = () => {
       href: 'https://x.com/EGIRL_BSC',
       icon: Twitter,
       description: 'Follow us for project updates'
-    },
-    {
-      name: 'Discord',
-      href: 'https://discord.gg/3sKCjftfe2',
-      icon: MessageSquare,
-      description: 'Join our Discord server'
     },
     {
       name: 'Email',
@@ -202,7 +196,7 @@ const ContactPage = () => {
                 Follow Our <span className="gradient-text">Journey</span>
               </h2>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+              <div className="grid grid-cols-1 md:grid-cols-1 gap-8 mb-8">
                 {socialLinks.map((social, index) => (
                   <motion.div
                     key={index}
