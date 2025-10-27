@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { ArrowRight, Coins, Users, TrendingUp, Zap, Heart, Brain, Shield, Gift, Download, ShoppingCart, MessageCircle, ExternalLink } from 'lucide-react';
+import { ArrowRight, Coins, Users, TrendingUp, Zap, Heart, Brain, Shield, Gift, Download, ShoppingCart, MessageCircle, ExternalLink, Send } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import TokenCard from '../components/TokenCard';
@@ -137,7 +137,7 @@ const HomePage = () => {
                         rel="noopener noreferrer"
                         className="block bg-gradient-to-r from-blue-500 to-blue-700 text-white py-3 px-6 rounded-lg hover:shadow-lg transition-all mb-3"
                       >
-                        <MessageCircle className="w-5 h-5 inline mr-2" />
+                        <Send className="w-5 h-5 inline mr-2" />
                         🇬🇧 English Community
                       </a>
                       <a
@@ -146,7 +146,7 @@ const HomePage = () => {
                         rel="noopener noreferrer"
                         className="block bg-gradient-to-r from-green-500 to-green-600 text-white py-3 px-6 rounded-lg hover:shadow-lg transition-all"
                       >
-                        <MessageCircle className="w-5 h-5 inline mr-2" />
+                        <Send className="w-5 h-5 inline mr-2" />
                         🇨🇳 中文社区
                       </a>
                     </div>
