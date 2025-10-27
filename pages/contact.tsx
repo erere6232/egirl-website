@@ -103,50 +103,107 @@ const ContactPage = () => {
               </p>
             </motion.div>
 
-            {/* Contact Methods */}
+            {/* Contact Methods - Simplified */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.8 }}
-              className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16"
+              className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-16"
             >
-              {contactMethods.map((method, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.4 + index * 0.2, duration: 0.8 }}
-                  className="card text-center group hover:scale-105 transition-all duration-300"
+              {/* Twitter */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4, duration: 0.8 }}
+                className="card text-center group hover:scale-105 transition-all duration-300"
+              >
+                <div className="w-16 h-16 bg-gradient-to-r from-blue-400 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Twitter className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-lg font-semibold text-white mb-4">Twitter</h3>
+                <a
+                  href="https://x.com/EGIRL_BSC"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-primary inline-flex items-center text-sm"
                 >
-                  <div className={`w-16 h-16 bg-gradient-to-r ${method.color} rounded-full flex items-center justify-center mx-auto mb-6`}>
-                    <method.icon className="w-8 h-8 text-white" />
-                  </div>
-                  
-                  <h3 className="text-xl font-semibold text-white mb-4">{method.title}</h3>
-                  <p className="text-gray-300 mb-4">{method.description}</p>
-                  
-                  <div className="bg-egirl-dark/50 rounded-lg p-4 mb-6">
-                    <p className="text-egirl-pink font-mono text-sm break-all">{method.value}</p>
-                  </div>
-                  
-                  <a
-                    href={method.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn-primary inline-flex items-center"
-                  >
-                    <ExternalLink className="w-5 h-5 mr-2" />
-                    Connect
-                  </a>
-                </motion.div>
-              ))}
+                  <ExternalLink className="w-4 h-4 mr-2" />
+                  Follow
+                </a>
+              </motion.div>
+
+              {/* Discord */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5, duration: 0.8 }}
+                className="card text-center group hover:scale-105 transition-all duration-300"
+              >
+                <div className="w-16 h-16 bg-gradient-to-r from-indigo-500 to-indigo-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <MessageSquare className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-lg font-semibold text-white mb-4">Discord</h3>
+                <a
+                  href="https://discord.gg/3sKCjftfe2"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-primary inline-flex items-center text-sm"
+                >
+                  <ExternalLink className="w-4 h-4 mr-2" />
+                  Join
+                </a>
+              </motion.div>
+
+              {/* Telegram English */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.6, duration: 0.8 }}
+                className="card text-center group hover:scale-105 transition-all duration-300"
+              >
+                <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-700 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Send className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-lg font-semibold text-white mb-4">🇬🇧 English</h3>
+                <a
+                  href="https://t.me/+VdZHL9gqOF5lNTI1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-primary inline-flex items-center text-sm"
+                >
+                  <ExternalLink className="w-4 h-4 mr-2" />
+                  Join
+                </a>
+              </motion.div>
+
+              {/* Telegram Chinese */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.7, duration: 0.8 }}
+                className="card text-center group hover:scale-105 transition-all duration-300"
+              >
+                <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Send className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-lg font-semibold text-white mb-4">🇨🇳 中文</h3>
+                <a
+                  href="https://t.me/+N7FUuuYJIdQyMjFl"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-primary inline-flex items-center text-sm"
+                >
+                  <ExternalLink className="w-4 h-4 mr-2" />
+                  Join
+                </a>
+              </motion.div>
             </motion.div>
 
             {/* Email Contact */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6, duration: 0.8 }}
+              transition={{ delay: 0.8, duration: 0.8 }}
               className="card max-w-4xl mx-auto mb-16"
             >
               <div className="text-center">
@@ -171,8 +228,7 @@ const ContactPage = () => {
                 </div>
                 
                 <p className="text-gray-300 mb-6">
-                  For business inquiries, partnerships, or general questions about the EGIRL project, 
-                  please don't hesitate to reach out to us directly.
+                  For business inquiries, partnerships, or general questions about the EGIRL project.
                 </p>
                 
                 <a
@@ -182,76 +238,6 @@ const ContactPage = () => {
                   <Mail className="w-5 h-5 mr-2" />
                   Send Email
                 </a>
-              </div>
-            </motion.div>
-
-            {/* Social Media */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.8, duration: 0.8 }}
-              className="mb-16"
-            >
-              <h2 className="text-4xl font-bold text-white text-center mb-12">
-                Follow Our <span className="gradient-text">Journey</span>
-              </h2>
-              
-              <div className="grid grid-cols-1 md:grid-cols-1 gap-8 mb-8">
-                {socialLinks.map((social, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 1.0 + index * 0.2, duration: 0.8 }}
-                    className="card text-center group hover:scale-105 transition-all duration-300"
-                  >
-                    <div className="w-16 h-16 bg-gradient-to-r from-egirl-pink to-egirl-purple rounded-full flex items-center justify-center mx-auto mb-6">
-                      <social.icon className="w-8 h-8 text-white" />
-                    </div>
-                    
-                    <h3 className="text-xl font-semibold text-white mb-4">{social.name}</h3>
-                    <p className="text-gray-300 mb-6">{social.description}</p>
-                    
-                    <a
-                      href={social.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="btn-secondary inline-flex items-center"
-                    >
-                      <ExternalLink className="w-5 h-5 mr-2" />
-                      Visit {social.name}
-                    </a>
-                  </motion.div>
-                ))}
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {telegramLinks.map((telegram, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 1.0 + index * 0.2, duration: 0.8 }}
-                    className="card text-center group hover:scale-105 transition-all duration-300"
-                  >
-                    <div className={`w-16 h-16 bg-gradient-to-r ${telegram.color} rounded-full flex items-center justify-center mx-auto mb-6`}>
-                      <telegram.icon className="w-8 h-8 text-white" />
-                    </div>
-                    
-                    <h3 className="text-xl font-semibold text-white mb-4">{telegram.name}</h3>
-                    <p className="text-gray-300 mb-6">{telegram.description}</p>
-                    
-                    <a
-                      href={telegram.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="btn-primary inline-flex items-center"
-                    >
-                      <ExternalLink className="w-5 h-5 mr-2" />
-                      Join Now
-                    </a>
-                  </motion.div>
-                ))}
               </div>
             </motion.div>
 
