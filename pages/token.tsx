@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
-import { Coins, Shield, TrendingUp, Users, ExternalLink, Copy, CheckCircle } from 'lucide-react';
+import { Coins, Shield, TrendingUp, Users, ExternalLink, Copy, CheckCircle, ShoppingCart, Gift, MessageCircle, Download } from 'lucide-react';
 import { useState } from 'react';
+import Link from 'next/link';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import TokenCard from '../components/TokenCard';
@@ -30,10 +31,10 @@ const TokenPage = () => {
       description: 'Maximum supply'
     },
     {
-      title: 'Network',
-      value: 'BSC',
-      icon: Shield,
-      description: 'Binance Smart Chain'
+      title: 'Current Price',
+      value: '$0.000015',
+      icon: TrendingUp,
+      description: 'Early stage'
     }
   ];
 
@@ -73,10 +74,34 @@ const TokenPage = () => {
               <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
                 <span className="gradient-text">EGIRL Token</span>
               </h1>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
                 A satirical meme token built on Binance Smart Chain, reflecting on modern 
                 relationships through blockchain technology.
               </p>
+              
+              {/* Quick Actions */}
+              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+                <a
+                  href="https://t.me/+N7FUuuYJIdQyMjFl"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-primary inline-flex items-center justify-center"
+                >
+                  <Gift className="w-5 h-5 mr-2" />
+                  Claim Free Airdrop (500-1K EGIRL)
+                  <ExternalLink className="ml-2 w-4 h-4" />
+                </a>
+                <a
+                  href="https://pancakeswap.finance/swap?outputCurrency=0x2814cdae605eeb2e7755ee7aad38da9facfafb11"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-secondary inline-flex items-center justify-center"
+                >
+                  <ShoppingCart className="w-5 h-5 mr-2" />
+                  Buy on PancakeSwap
+                  <ExternalLink className="ml-2 w-4 h-4" />
+                </a>
+              </div>
             </motion.div>
 
             {/* Token Details */}
@@ -114,7 +139,7 @@ const TokenPage = () => {
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <button
                     onClick={handleCopyContract}
-                    className="btn-primary inline-flex items-center"
+                    className="btn-primary inline-flex items-center justify-center"
                   >
                     {copied ? <CheckCircle className="w-5 h-5 mr-2" /> : <Copy className="w-5 h-5 mr-2" />}
                     {copied ? 'Copied!' : 'Copy Address'}
@@ -123,7 +148,7 @@ const TokenPage = () => {
                     href={`https://bscscan.com/token/${contractAddress}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn-secondary inline-flex items-center"
+                    className="btn-secondary inline-flex items-center justify-center"
                   >
                     <ExternalLink className="w-5 h-5 mr-2" />
                     View on BSCScan
@@ -166,25 +191,22 @@ const TokenPage = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8, duration: 0.8 }}
-              className="card max-w-4xl mx-auto"
+              className="card max-w-4xl mx-auto mb-16"
             >
-              <h2 className="text-3xl font-bold text-white text-center mb-8">Trading Information</h2>
+              <h2 className="text-3xl font-bold text-white text-center mb-8">Buy & Trade EGIRL</h2>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
                 <div className="text-center">
-                  <h3 className="text-xl font-semibold text-white mb-4">Where to Buy</h3>
+                  <h3 className="text-xl font-semibold text-white mb-4">Buy on DEX</h3>
                   <div className="space-y-4">
                     <a
-                      href="#"
-                      className="block bg-gradient-to-r from-egirl-pink to-egirl-purple text-white py-3 px-6 rounded-lg hover:shadow-lg transition-all duration-300"
+                      href="https://pancakeswap.finance/swap?outputCurrency=0x2814cdae605eeb2e7755ee7aad38da9facfafb11"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block bg-gradient-to-r from-egirl-pink to-egirl-purple text-white py-4 px-6 rounded-lg hover:shadow-lg hover:scale-105 transition-all duration-300"
                     >
+                      <ShoppingCart className="w-6 h-6 inline mr-2" />
                       PancakeSwap
-                    </a>
-                    <a
-                      href="#"
-                      className="block bg-gradient-to-r from-egirl-cyan to-blue-500 text-white py-3 px-6 rounded-lg hover:shadow-lg transition-all duration-300"
-                    >
-                      Uniswap
                     </a>
                   </div>
                 </div>
@@ -193,18 +215,70 @@ const TokenPage = () => {
                   <h3 className="text-xl font-semibold text-white mb-4">Price Tracking</h3>
                   <div className="space-y-4">
                     <a
-                      href="#"
-                      className="block bg-gradient-to-r from-egirl-gold to-yellow-500 text-white py-3 px-6 rounded-lg hover:shadow-lg transition-all duration-300"
-                    >
-                      CoinGecko
-                    </a>
-                    <a
-                      href="#"
-                      className="block bg-gradient-to-r from-green-400 to-green-600 text-white py-3 px-6 rounded-lg hover:shadow-lg transition-all duration-300"
+                      href="https://www.dexscreener.com/bsc/0x2814cdae605eeb2e7755ee7aad38da9facfafb11"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block bg-gradient-to-r from-green-400 to-green-600 text-white py-4 px-6 rounded-lg hover:shadow-lg hover:scale-105 transition-all duration-300"
                     >
                       DEXScreener
                     </a>
                   </div>
+                </div>
+              </div>
+
+              {/* Airdrop Reminder */}
+              <div className="bg-gradient-to-r from-egirl-pink/20 to-egirl-purple/20 rounded-2xl p-6 mt-8">
+                <h3 className="text-2xl font-bold text-white text-center mb-4">
+                  🎁 <span className="gradient-text">Claim Your Free Airdrop!</span>
+                </h3>
+                <p className="text-center text-gray-300 mb-6">
+                  Join our Telegram group, submit your wallet address, and receive 500-1,000 EGIRL tokens for FREE!
+                </p>
+                <div className="text-center">
+                  <a
+                    href="https://t.me/+N7FUuuYJIdQyMjFl"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-primary inline-flex items-center"
+                  >
+                    <MessageCircle className="w-5 h-5 mr-2" />
+                    Join Telegram & Claim Airdrop
+                    <ExternalLink className="ml-2 w-4 h-4" />
+                  </a>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Whitepaper */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1.0, duration: 0.8 }}
+              className="card max-w-4xl mx-auto"
+            >
+              <h2 className="text-3xl font-bold text-white text-center mb-8">Project Documentation</h2>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="bg-egirl-dark/50 rounded-xl p-6 text-center hover:bg-egirl-dark/70 transition-all">
+                  <Download className="w-12 h-12 text-egirl-pink mx-auto mb-4" />
+                  <h3 className="text-xl font-semibold text-white mb-4">Whitepaper</h3>
+                  <p className="text-gray-300 mb-4">Download our complete project documentation</p>
+                  <a
+                    href="#"
+                    className="btn-primary inline-flex items-center"
+                  >
+                    <Download className="w-5 h-5 mr-2" />
+                    Download PDF
+                  </a>
+                </div>
+                
+                <div className="bg-egirl-dark/50 rounded-xl p-6 text-center hover:bg-egirl-dark/70 transition-all">
+                  <Copy className="w-12 h-12 text-egirl-cyan mx-auto mb-4" />
+                  <h3 className="text-xl font-semibold text-white mb-4">Tokenomics</h3>
+                  <p className="text-gray-300 mb-4">Learn about our token distribution</p>
+                  <Link href="/token" className="btn-secondary inline-flex items-center">
+                    View Tokenomics
+                  </Link>
                 </div>
               </div>
             </motion.div>
