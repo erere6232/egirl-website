@@ -122,13 +122,13 @@ const HomePage = () => {
                   <div className="bg-white/10 rounded-2xl p-8 backdrop-blur-sm">
                     <h3 className="text-2xl font-bold text-white mb-6">Quick Links</h3>
                     <div className="space-y-4">
-                      <a
-                        href="#"
+                      <Link
+                        href="/whitepaper"
                         className="block bg-gradient-to-r from-blue-500 to-blue-600 text-white py-3 px-6 rounded-lg hover:shadow-lg transition-all"
                       >
                         <Download className="w-5 h-5 inline mr-2" />
                         Whitepaper
-                      </a>
+                      </Link>
                       <a
                         href="https://t.me/+N7FUuuYJIdQyMjFl"
                         target="_blank"
