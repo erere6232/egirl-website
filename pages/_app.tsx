@@ -1,10 +1,11 @@
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import '../styles/globals.css';
+import { LanguageProvider } from '../contexts/LanguageContext';
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <>
+    <LanguageProvider>
       <Head>
         <title>EasyGirl (EGIRL) - Satirical Meme Token</title>
         <meta name="description" content="EasyGirl (EGIRL) - A satirical meme token that reflects on modern relationships through blockchain technology. Not encouraging frivolity, but satirizing imbalance." />
@@ -23,6 +24,6 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta name="twitter:image" content="/android-chrome-512x512.png" />
       </Head>
       <Component {...pageProps} />
-    </>
+    </LanguageProvider>
   );
 }
