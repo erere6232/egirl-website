@@ -28,11 +28,28 @@ const ContactPage = () => {
     },
     {
       icon: MessageCircle,
-      title: 'Telegram',
-      description: 'Join our community',
+      title: 'Telegram (English)',
+      description: 'Join our English community',
       value: 'EGIRL Official',
-      link: 'https://t.me/+N7FUuuYJIdQyMjFl',
+      link: 'https://t.me/+VdZHL9gqOF5lNTI1',
       color: 'from-blue-500 to-blue-700'
+    }
+  ];
+
+  const telegramLinks = [
+    {
+      name: '🇬🇧 English Community',
+      description: 'Join our English Telegram',
+      href: 'https://t.me/+VdZHL9gqOF5lNTI1',
+      icon: MessageCircle,
+      color: 'from-blue-500 to-blue-700'
+    },
+    {
+      name: '🇨🇳 中文社区',
+      description: '加入我们的中文电报群',
+      href: 'https://t.me/+N7FUuuYJIdQyMjFl',
+      icon: MessageCircle,
+      color: 'from-green-500 to-green-600'
     }
   ];
 
@@ -42,12 +59,6 @@ const ContactPage = () => {
       href: 'https://x.com/EGIRL_BSC',
       icon: Twitter,
       description: 'Follow us for project updates'
-    },
-    {
-      name: 'Telegram',
-      href: 'https://t.me/+N7FUuuYJIdQyMjFl',
-      icon: MessageCircle,
-      description: 'Join our community discussion'
     },
     {
       name: 'Email',
@@ -185,7 +196,7 @@ const ContactPage = () => {
                 Follow Our <span className="gradient-text">Journey</span>
               </h2>
               
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
                 {socialLinks.map((social, index) => (
                   <motion.div
                     key={index}
@@ -209,6 +220,35 @@ const ContactPage = () => {
                     >
                       <ExternalLink className="w-5 h-5 mr-2" />
                       Visit {social.name}
+                    </a>
+                  </motion.div>
+                ))}
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {telegramLinks.map((telegram, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 1.0 + index * 0.2, duration: 0.8 }}
+                    className="card text-center group hover:scale-105 transition-all duration-300"
+                  >
+                    <div className={`w-16 h-16 bg-gradient-to-r ${telegram.color} rounded-full flex items-center justify-center mx-auto mb-6`}>
+                      <telegram.icon className="w-8 h-8 text-white" />
+                    </div>
+                    
+                    <h3 className="text-xl font-semibold text-white mb-4">{telegram.name}</h3>
+                    <p className="text-gray-300 mb-6">{telegram.description}</p>
+                    
+                    <a
+                      href={telegram.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn-primary inline-flex items-center"
+                    >
+                      <ExternalLink className="w-5 h-5 mr-2" />
+                      Join Now
                     </a>
                   </motion.div>
                 ))}
