@@ -5,8 +5,10 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import TokenCard from '../components/TokenCard';
 import SEO from '../components/SEO';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const HomePage = () => {
+  const { t } = useLanguage();
   const tokenInfo = [
     {
       title: 'Total Supply',
@@ -90,20 +92,20 @@ const HomePage = () => {
                     <Gift className="w-16 h-16 text-egirl-pink mx-auto md:mx-0" />
                   </motion.div>
                   <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                    <span className="gradient-text">Free Airdrop!</span> 🎁
+                    <span className="gradient-text">{t('airdrop.title')}</span> 🎁
                   </h2>
                   <p className="text-xl text-white mb-6">
-                    Join our Telegram and submit your wallet address to receive <span className="font-bold text-egirl-pink text-2xl">500-1,000 EGIRL</span> tokens for FREE!
+                    {t('airdrop.description')} <span className="font-bold text-egirl-pink text-2xl">500-1,000 EGIRL</span> tokens for FREE!
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4">
                     <a
-                      href="https://t.me/+N7FUuuYJIdQyMjFl"
+                      href="https://t.me/+VdZHL9gqOF5lNTI1"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="btn-primary inline-flex items-center justify-center group"
                     >
                       <Gift className="w-5 h-5 mr-2 animate-bounce" />
-                      Claim Free Airdrop
+                      {t('airdrop.claim')}
                       <ExternalLink className="ml-2 w-4 h-4" />
                     </a>
                     <a
@@ -113,7 +115,7 @@ const HomePage = () => {
                       className="btn-secondary inline-flex items-center justify-center"
                     >
                       <ShoppingCart className="w-5 h-5 mr-2" />
-                      Buy Now
+                      {t('buy.now.short')}
                       <ExternalLink className="ml-2 w-4 h-4" />
                     </a>
                   </div>
@@ -130,13 +132,22 @@ const HomePage = () => {
                         Whitepaper
                       </Link>
                       <a
+                        href="https://t.me/+VdZHL9gqOF5lNTI1"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block bg-gradient-to-r from-blue-500 to-blue-700 text-white py-3 px-6 rounded-lg hover:shadow-lg transition-all mb-3"
+                      >
+                        <MessageCircle className="w-5 h-5 inline mr-2" />
+                        🇬🇧 English Community
+                      </a>
+                      <a
                         href="https://t.me/+N7FUuuYJIdQyMjFl"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="block bg-gradient-to-r from-blue-500 to-blue-700 text-white py-3 px-6 rounded-lg hover:shadow-lg transition-all"
+                        className="block bg-gradient-to-r from-green-500 to-green-600 text-white py-3 px-6 rounded-lg hover:shadow-lg transition-all"
                       >
                         <MessageCircle className="w-5 h-5 inline mr-2" />
-                        Join Telegram
+                        🇨🇳 中文社区
                       </a>
                     </div>
                   </div>
@@ -171,15 +182,14 @@ const HomePage = () => {
               </h1>
               
               <p className="text-2xl md:text-3xl text-gray-300 mb-4">
-                When memes become mirrors,
+                {t('hero.subtitle')}
               </p>
               <p className="text-2xl md:text-3xl text-egirl-pink font-semibold mb-8">
-                awakening becomes consensus
+                {t('hero.subtitle2')}
               </p>
               
               <p className="text-lg text-gray-400 max-w-3xl mx-auto leading-relaxed mb-12">
-                EasyGirl (EGIRL) is a satirical meme token that reflects on modern relationships 
-                through blockchain technology. Not encouraging frivolity, but satirizing imbalance.
+                {t('hero.description')}
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
@@ -190,11 +200,11 @@ const HomePage = () => {
                   className="btn-primary inline-flex items-center justify-center"
                 >
                   <ShoppingCart className="w-5 h-5 mr-2" />
-                  Buy EGIRL Now
+                  {t('buy.now')}
                   <ExternalLink className="ml-2 w-4 h-4" />
                 </a>
                 <Link href="/token" className="btn-secondary inline-flex items-center justify-center">
-                  Learn More <ArrowRight className="ml-2 w-5 h-5" />
+                  {t('learn.more')} <ArrowRight className="ml-2 w-5 h-5" />
                 </Link>
               </div>
             </motion.div>
@@ -226,7 +236,7 @@ const HomePage = () => {
               className="text-center mb-16"
             >
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">
-                Our <span className="gradient-text">Philosophy</span>
+                {t('philosophy')}
               </h2>
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -256,24 +266,19 @@ const HomePage = () => {
               className="card max-w-4xl mx-auto text-center mb-16"
             >
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-                The <span className="gradient-text">"Labor Investment Theory"</span>
+                <span className="gradient-text">{t('theory.title')}</span>
               </h2>
               
               <p className="text-lg text-gray-300 leading-relaxed mb-6">
-                In the imbalanced relationships of desire and responsibility, there are always those 
-                who invest everything, and those who benefit easily. EGIRL uses blockchain language 
-                to satirize this asymmetrical absurdity.
+                {t('theory.description')}
               </p>
               
               <div className="bg-gradient-to-r from-egirl-pink/20 to-egirl-purple/20 rounded-2xl p-6">
                 <p className="text-xl text-white font-semibold mb-4">
-                  "Awakening is not anger, but clarity; not escaping responsibility, 
-                  but redefining value."
+                  {t('theory.quote')}
                 </p>
                 <p className="text-gray-300">
-                  Male de-responsibilization awakening is not about abandoning responsibility, 
-                  but refusing to be held hostage by emotions and money, reclaiming the freedom 
-                  of independent thinking and choice.
+                  {t('theory.quote.desc')}
                 </p>
               </div>
             </motion.div>
@@ -287,20 +292,20 @@ const HomePage = () => {
             >
               <div className="bg-gradient-to-r from-egirl-pink/30 to-egirl-purple/30 rounded-3xl p-8 backdrop-blur-lg border border-egirl-pink/50">
                 <h2 className="text-4xl font-bold text-white mb-6">
-                  Ready to Join the <span className="gradient-text">Movement</span>?
+                  {t('cta.title')} <span className="gradient-text">{t('cta.title2')}</span>?
                 </h2>
                 <p className="text-xl text-gray-300 mb-8">
-                  Get your free airdrop or buy EGIRL on PancakeSwap now!
+                  {t('cta.description')}
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <a
-                    href="https://t.me/+N7FUuuYJIdQyMjFl"
+                    href="https://t.me/+VdZHL9gqOF5lNTI1"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn-primary inline-flex items-center justify-center text-lg px-8 py-4"
                   >
                     <Gift className="w-6 h-6 mr-2" />
-                    Claim Free Airdrop
+                    {t('airdrop.claim')}
                     <ExternalLink className="ml-2 w-5 h-5" />
                   </a>
                   <a
