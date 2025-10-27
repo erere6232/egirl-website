@@ -252,7 +252,9 @@ const WhitepaperPage = () => {
                   <div className="bg-gradient-to-r from-egirl-pink/20 to-egirl-purple/20 rounded-xl p-6">
                     <h3 className="text-2xl font-semibold text-white mb-4">🎁 Claim Free Airdrop</h3>
                     <ol className="list-decimal list-inside space-y-3 ml-4">
-                      <li>Join our Telegram group: <a href="https://t.me/+N7FUuuYJIdQyMjFl" target="_blank" rel="noopener noreferrer" className="text-egirl-pink hover:underline">https://t.me/+N7FUuuYJIdQyMjFl</a></li>
+                      <li>Join our Telegram group:</li>
+                      <li className="ml-4">🇬🇧 <a href="https://t.me/+VdZHL9gqOF5lNTI1" target="_blank" rel="noopener noreferrer" className="text-egirl-pink hover:underline">English Community</a></li>
+                      <li className="ml-4">🇨🇳 <a href="https://t.me/+N7FUuuYJIdQyMjFl" target="_blank" rel="noopener noreferrer" className="text-egirl-pink hover:underline">中文社区</a></li>
                       <li>Submit your BSC wallet address</li>
                       <li>Receive 500-1,000 EGIRL tokens for FREE</li>
                       <li>Share with friends to help grow the community</li>
@@ -297,14 +299,24 @@ const WhitepaperPage = () => {
                   Ready to be part of this satirical movement?
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <a
-                    href="https://t.me/+N7FUuuYJIdQyMjFl"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn-primary inline-flex items-center"
-                  >
-                    Join Telegram
-                  </a>
+                  <div className="space-y-3">
+                    <a
+                      href="https://t.me/+VdZHL9gqOF5lNTI1"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn-primary inline-flex items-center justify-center w-full"
+                    >
+                      🇬🇧 English Community
+                    </a>
+                    <a
+                      href="https://t.me/+N7FUuuYJIdQyMjFl"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn-secondary inline-flex items-center justify-center w-full"
+                    >
+                      🇨🇳 中文社区
+                    </a>
+                  </div>
                   <a
                     href="https://pancakeswap.finance/swap?outputCurrency=0x2814cdae605eeb2e7755ee7aad38da9facfafb11"
                     target="_blank"
