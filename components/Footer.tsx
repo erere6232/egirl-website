@@ -1,7 +1,9 @@
 import Link from 'next/link';
 import { Mail, Twitter, MessageCircle, ExternalLink } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const Footer = () => {
+  const { t } = useLanguage();
   const socialLinks = [
     {
       name: 'Twitter',
@@ -9,14 +11,20 @@ const Footer = () => {
       icon: Twitter,
     },
     {
-      name: 'Telegram',
-      href: 'https://t.me/+N7FUuuYJIdQyMjFl',
-      icon: MessageCircle,
-    },
-    {
       name: 'Email',
       href: 'mailto:easygirltoken@gmail.com',
       icon: Mail,
+    },
+  ];
+
+  const telegramLinks = [
+    {
+      name: '🇬🇧 English',
+      href: 'https://t.me/+VdZHL9gqOF5lNTI1',
+    },
+    {
+      name: '🇨🇳 中文',
+      href: 'https://t.me/+N7FUuuYJIdQyMjFl',
     },
   ];
 
@@ -37,14 +45,13 @@ const Footer = () => {
               <span className="text-2xl font-bold text-white">EGIRL</span>
             </Link>
             <p className="text-gray-300 text-sm leading-relaxed">
-              EasyGirl (EGIRL) - A satirical meme token that reflects on modern relationships 
-              through blockchain technology. Not encouraging frivolity, but satirizing imbalance.
+              {t('footer.description')}
             </p>
           </div>
 
           {/* Quick Links */}
           <div className="space-y-4">
-            <h3 className="text-white font-semibold text-lg">Quick Links</h3>
+            <h3 className="text-white font-semibold text-lg">{t('footer.quicklinks')}</h3>
             <div className="space-y-2">
               <Link href="/token" className="block text-gray-300 hover:text-egirl-pink transition-colors">
                 Token Info
@@ -63,8 +70,8 @@ const Footer = () => {
 
           {/* Social Links */}
           <div className="space-y-4">
-            <h3 className="text-white font-semibold text-lg">Connect With Us</h3>
-            <div className="flex space-x-4">
+            <h3 className="text-white font-semibold text-lg">{t('footer.connect')}</h3>
+            <div className="flex space-x-4 mb-4">
               {socialLinks.map((social) => (
                 <a
                   key={social.name}
@@ -74,6 +81,20 @@ const Footer = () => {
                   className="w-10 h-10 bg-white/10 hover:bg-egirl-pink rounded-full flex items-center justify-center transition-colors duration-300 group"
                 >
                   <social.icon className="w-5 h-5 text-white group-hover:text-white" />
+                </a>
+              ))}
+            </div>
+            <div className="space-y-2">
+              <p className="text-white font-semibold text-sm mb-2">{t('footer.telegram')}</p>
+              {telegramLinks.map((telegram) => (
+                <a
+                  key={telegram.name}
+                  href={telegram.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block text-gray-300 hover:text-egirl-pink transition-colors text-sm"
+                >
+                  {telegram.name}
                 </a>
               ))}
             </div>
