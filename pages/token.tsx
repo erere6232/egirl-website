@@ -82,7 +82,7 @@ const TokenPage = () => {
               {/* Quick Actions */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
                 <a
-                  href="https://t.me/+N7FUuuYJIdQyMjFl"
+                  href="https://t.me/+VdZHL9gqOF5lNTI1"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-primary inline-flex items-center justify-center"
@@ -235,16 +235,28 @@ const TokenPage = () => {
                   Join our Telegram group, submit your wallet address, and receive 500-1,000 EGIRL tokens for FREE!
                 </p>
                 <div className="text-center">
-                  <a
-                    href="https://t.me/+N7FUuuYJIdQyMjFl"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn-primary inline-flex items-center"
-                  >
-                    <MessageCircle className="w-5 h-5 mr-2" />
-                    Join Telegram & Claim Airdrop
-                    <ExternalLink className="ml-2 w-4 h-4" />
-                  </a>
+                  <div className="space-y-3">
+                    <a
+                      href="https://t.me/+VdZHL9gqOF5lNTI1"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn-primary inline-flex items-center w-full justify-center"
+                    >
+                      <MessageCircle className="w-5 h-5 mr-2" />
+                      🇬🇧 English Community
+                      <ExternalLink className="ml-2 w-4 h-4" />
+                    </a>
+                    <a
+                      href="https://t.me/+N7FUuuYJIdQyMjFl"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn-secondary inline-flex items-center w-full justify-center"
+                    >
+                      <MessageCircle className="w-5 h-5 mr-2" />
+                      🇨🇳 中文社区
+                      <ExternalLink className="ml-2 w-4 h-4" />
+                    </a>
+                  </div>
                 </div>
               </div>
             </motion.div>
