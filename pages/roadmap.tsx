@@ -5,14 +5,26 @@ import Footer from '../components/Footer';
 import RoadmapItem from '../components/RoadmapItem';
 import SEO from '../components/SEO';
 
+// 定义类型
+type StatusType = 'current' | 'upcoming' | 'completed';
+
+interface RoadmapPhase {
+  phase: string;
+  time: string;
+  title: string;
+  description: string;
+  status: StatusType;
+  icon: React.ComponentType<any>;
+}
+
 const RoadmapPage = () => {
-  const roadmapData = [
+  const roadmapData: RoadmapPhase[] = [
     {
       phase: 'Phase 1',
       time: '2025-10',
       title: 'Contract Audit & Community Setup',
       description: 'Smart contract audit completion, official community establishment, and website launch.',
-      status: 'upcoming',
+      status: 'upcoming' as StatusType,
       icon: CheckCircle
     },
     {
@@ -20,7 +32,7 @@ const RoadmapPage = () => {
       time: '2025-11',
       title: 'First Airdrop & Community Activities',
       description: 'Launch 1% token airdrop and initiate community interaction activities to build engagement.',
-      status: 'upcoming',
+      status: 'upcoming' as StatusType,
       icon: Gift
     },
     {
@@ -28,7 +40,7 @@ const RoadmapPage = () => {
       time: '2025-12',
       title: 'Community Growth',
       description: 'Expand community to 5,000+ active members through targeted marketing and engagement campaigns.',
-      status: 'upcoming',
+      status: 'upcoming' as StatusType,
       icon: Users
     },
     {
@@ -36,7 +48,7 @@ const RoadmapPage = () => {
       time: '2026-01',
       title: 'Meme Campaigns & Promotion',
       description: 'Launch meme campaigns and token promotion activities to increase awareness and adoption.',
-      status: 'upcoming',
+      status: 'upcoming' as StatusType,
       icon: TrendingUp
     },
     {
@@ -44,7 +56,7 @@ const RoadmapPage = () => {
       time: '2026-02',
       title: 'Exchange Listings & Liquidity',
       description: 'List on major exchanges or DEX platforms and increase liquidity for better trading experience.',
-      status: 'upcoming',
+      status: 'upcoming' as StatusType,
       icon: Globe
     }
   ];
@@ -54,19 +66,19 @@ const RoadmapPage = () => {
       icon: Rocket,
       title: 'Project Launch',
       description: 'Official launch of EasyGirl (EGIRL) token with initial community building',
-      status: 'completed'
+      status: 'completed' as StatusType
     },
     {
       icon: Users,
       title: 'Community Building',
       description: 'Establishing core community and social media presence',
-      status: 'current'
+      status: 'current' as StatusType
     },
     {
       icon: TrendingUp,
       title: 'Market Expansion',
       description: 'Growing market presence and increasing token adoption',
-      status: 'upcoming'
+      status: 'upcoming' as StatusType
     }
   ];
 
