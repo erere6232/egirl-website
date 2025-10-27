@@ -11,9 +11,29 @@ const TeamPage = () => {
       name: 'Jack Ma',
       role: 'Founder & Lead Developer',
       description: 'Jack Ma is the visionary behind EasyGirl (EGIRL) and leads the development of the project\'s smart contracts and tokenomics. Passionate about memes, blockchain, and the absurdities of modern relationships, he combines humor with technology to create a community-driven satirical token. When not coding or strategizing the next meme campaign, Jack enjoys analyzing internet culture and sharing insights with the EGIRL community.',
-      avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face',
+      avatar: 'https://images.unsplash.com/photo-1542909168-82c3e7fdca5c?w=400&h=400&fit=crop&crop=face',
       socialLinks: {
         twitter: 'https://x.com/EGIRL_BSC',
+        linkedin: '#'
+      }
+    },
+    {
+      name: 'Yuki Chen',
+      role: 'Marketing & Community Manager',
+      description: 'Yuki Chen brings over 5 years of experience in digital marketing and community building to the EGIRL project. Previously working with several successful DeFi projects on BSC, she specializes in social media strategy, influencer partnerships, and creating engaging content that resonates with the crypto community. Yuki\'s background in psychology helps her understand community sentiment and build authentic connections with EGIRL holders. She leads our Telegram community, manages marketing campaigns, and ensures our message reaches the right audience.',
+      avatar: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop&crop=face',
+      socialLinks: {
+        twitter: '#',
+        linkedin: '#'
+      }
+    },
+    {
+      name: 'Maya Park',
+      role: 'Product Designer & UX Lead',
+      description: 'Maya Park is the creative force behind EGIRL\'s visual identity and user experience. With a degree in Digital Design and 4 years of experience in fintech and blockchain design, she creates the visual elements that make our project stand out. Maya is responsible for the website design, token branding, social media graphics, and ensuring our community has a cohesive visual experience across all platforms. Her keen eye for aesthetics and understanding of user psychology helps make EGIRL both approachable and professional.',
+      avatar: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=400&h=400&fit=crop&crop=face',
+      socialLinks: {
+        twitter: '#',
         linkedin: '#'
       }
     }
@@ -76,7 +96,7 @@ const TeamPage = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.8 }}
-              className="grid grid-cols-1 lg:grid-cols-1 gap-8 mb-16"
+              className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16"
             >
               {teamMembers.map((member, index) => (
                 <TeamMember
