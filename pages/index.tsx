@@ -1,10 +1,10 @@
 import { motion } from 'framer-motion';
-import Head from 'next/head';
 import Link from 'next/link';
 import { ArrowRight, Coins, Users, TrendingUp, Zap, Heart, Brain, Shield } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import TokenCard from '../components/TokenCard';
+import SEO from '../components/SEO';
 
 const HomePage = () => {
   const tokenInfo = [
@@ -55,10 +55,11 @@ const HomePage = () => {
 
   return (
     <>
-      <Head>
-        <title>EasyGirl (EGIRL) - Satirical Meme Token</title>
-        <meta name="description" content="EasyGirl (EGIRL) - A satirical meme token that reflects on modern relationships through blockchain technology." />
-      </Head>
+      <SEO 
+        title="EasyGirl (EGIRL) - Satirical Meme Token"
+        description="EasyGirl (EGIRL) - A satirical meme token reflecting on modern relationships through blockchain technology. Community-driven on BSC."
+        url="/"
+      />
       
       <div className="min-h-screen bg-gradient-to-br from-egirl-dark via-purple-900 to-egirl-dark">
         <Header />
