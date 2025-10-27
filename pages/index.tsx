@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { ArrowRight, Coins, Users, TrendingUp, Zap, Heart, Brain, Shield } from 'lucide-react';
+import { ArrowRight, Coins, Users, TrendingUp, Zap, Heart, Brain, Shield, Gift, Download, ShoppingCart, MessageCircle, ExternalLink } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import TokenCard from '../components/TokenCard';
@@ -23,15 +23,15 @@ const HomePage = () => {
     },
     {
       title: 'Community',
-      value: '3+ Members',
+      value: 'Growing',
       icon: Users,
-      description: 'Growing fast'
+      description: 'Join us now'
     },
     {
-      title: 'Price',
-      value: '$0.00',
+      title: 'Current Price',
+      value: '$0.000015',
       icon: TrendingUp,
-      description: 'Launch price'
+      description: 'Early stage'
     }
   ];
 
@@ -64,8 +64,90 @@ const HomePage = () => {
       <div className="min-h-screen bg-gradient-to-br from-egirl-dark via-purple-900 to-egirl-dark">
         <Header />
         
+        {/* Airdrop Banner - Top */}
+        <motion.div
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="relative mt-16 pt-8 pb-8"
+        >
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="bg-gradient-to-r from-egirl-pink/20 via-egirl-purple/20 to-egirl-cyan/20 backdrop-blur-lg border-2 border-egirl-pink rounded-3xl p-8 shadow-2xl">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div className="text-center md:text-left">
+                  <motion.div
+                    animate={{ 
+                      scale: [1, 1.05, 1],
+                      rotate: [0, 5, -5, 0]
+                    }}
+                    transition={{ 
+                      duration: 2,
+                      repeat: Infinity,
+                      repeatDelay: 2
+                    }}
+                    className="inline-block mb-4"
+                  >
+                    <Gift className="w-16 h-16 text-egirl-pink mx-auto md:mx-0" />
+                  </motion.div>
+                  <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                    <span className="gradient-text">Free Airdrop!</span> 🎁
+                  </h2>
+                  <p className="text-xl text-white mb-6">
+                    Join our Telegram and submit your wallet address to receive <span className="font-bold text-egirl-pink text-2xl">500-1,000 EGIRL</span> tokens for FREE!
+                  </p>
+                  <div className="flex flex-col sm:flex-row gap-4">
+                    <a
+                      href="https://t.me/+N7FUuuYJIdQyMjFl"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn-primary inline-flex items-center justify-center group"
+                    >
+                      <Gift className="w-5 h-5 mr-2 animate-bounce" />
+                      Claim Free Airdrop
+                      <ExternalLink className="ml-2 w-4 h-4" />
+                    </a>
+                    <a
+                      href="https://pancakeswap.finance/swap?outputCurrency=0x2814cdae605eeb2e7755ee7aad38da9facfafb11"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn-secondary inline-flex items-center justify-center"
+                    >
+                      <ShoppingCart className="w-5 h-5 mr-2" />
+                      Buy Now
+                      <ExternalLink className="ml-2 w-4 h-4" />
+                    </a>
+                  </div>
+                </div>
+                <div className="text-center">
+                  <div className="bg-white/10 rounded-2xl p-8 backdrop-blur-sm">
+                    <h3 className="text-2xl font-bold text-white mb-6">Quick Links</h3>
+                    <div className="space-y-4">
+                      <a
+                        href="#"
+                        className="block bg-gradient-to-r from-blue-500 to-blue-600 text-white py-3 px-6 rounded-lg hover:shadow-lg transition-all"
+                      >
+                        <Download className="w-5 h-5 inline mr-2" />
+                        Whitepaper
+                      </a>
+                      <a
+                        href="https://t.me/+N7FUuuYJIdQyMjFl"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block bg-gradient-to-r from-blue-500 to-blue-700 text-white py-3 px-6 rounded-lg hover:shadow-lg transition-all"
+                      >
+                        <MessageCircle className="w-5 h-5 inline mr-2" />
+                        Join Telegram
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+        
         {/* Hero Section */}
-        <section className="pt-20 pb-16 px-4 sm:px-6 lg:px-8">
+        <section className="pb-16 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 50 }}
@@ -100,12 +182,19 @@ const HomePage = () => {
                 through blockchain technology. Not encouraging frivolity, but satirizing imbalance.
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="/token" className="btn-primary inline-flex items-center">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+                <a
+                  href="https://pancakeswap.finance/swap?outputCurrency=0x2814cdae605eeb2e7755ee7aad38da9facfafb11"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-primary inline-flex items-center justify-center"
+                >
+                  <ShoppingCart className="w-5 h-5 mr-2" />
+                  Buy EGIRL Now
+                  <ExternalLink className="ml-2 w-4 h-4" />
+                </a>
+                <Link href="/token" className="btn-secondary inline-flex items-center justify-center">
                   Learn More <ArrowRight className="ml-2 w-5 h-5" />
-                </Link>
-                <Link href="/roadmap" className="btn-secondary">
-                  View Roadmap
                 </Link>
               </div>
             </motion.div>
@@ -164,7 +253,7 @@ const HomePage = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.0, duration: 0.8 }}
-              className="card max-w-4xl mx-auto text-center"
+              className="card max-w-4xl mx-auto text-center mb-16"
             >
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
                 The <span className="gradient-text">"Labor Investment Theory"</span>
@@ -186,6 +275,45 @@ const HomePage = () => {
                   but refusing to be held hostage by emotions and money, reclaiming the freedom 
                   of independent thinking and choice.
                 </p>
+              </div>
+            </motion.div>
+
+            {/* CTA Section */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1.2, duration: 0.8 }}
+              className="max-w-4xl mx-auto text-center"
+            >
+              <div className="bg-gradient-to-r from-egirl-pink/30 to-egirl-purple/30 rounded-3xl p-8 backdrop-blur-lg border border-egirl-pink/50">
+                <h2 className="text-4xl font-bold text-white mb-6">
+                  Ready to Join the <span className="gradient-text">Movement</span>?
+                </h2>
+                <p className="text-xl text-gray-300 mb-8">
+                  Get your free airdrop or buy EGIRL on PancakeSwap now!
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <a
+                    href="https://t.me/+N7FUuuYJIdQyMjFl"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-primary inline-flex items-center justify-center text-lg px-8 py-4"
+                  >
+                    <Gift className="w-6 h-6 mr-2" />
+                    Claim Free Airdrop
+                    <ExternalLink className="ml-2 w-5 h-5" />
+                  </a>
+                  <a
+                    href="https://pancakeswap.finance/swap?outputCurrency=0x2814cdae605eeb2e7755ee7aad38da9facfafb11"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-secondary inline-flex items-center justify-center text-lg px-8 py-4"
+                  >
+                    <ShoppingCart className="w-6 h-6 mr-2" />
+                    Buy on PancakeSwap
+                    <ExternalLink className="ml-2 w-5 h-5" />
+                  </a>
+                </div>
               </div>
             </motion.div>
           </div>
