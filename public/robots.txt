@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://egirl-token.vercel.app/sitemap.xml
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Disallow admin and private areas if needed
+Disallow: /api/
