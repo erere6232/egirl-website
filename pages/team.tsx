@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion';
-import Head from 'next/head';
 import { Users, Code, Lightbulb, Target, Heart, Brain } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import TeamMember from '../components/TeamMember';
+import SEO from '../components/SEO';
 
 const TeamPage = () => {
   const teamMembers = [
@@ -13,7 +13,7 @@ const TeamPage = () => {
       description: 'Jack Ma is the visionary behind EasyGirl (EGIRL) and leads the development of the project\'s smart contracts and tokenomics. Passionate about memes, blockchain, and the absurdities of modern relationships, he combines humor with technology to create a community-driven satirical token. When not coding or strategizing the next meme campaign, Jack enjoys analyzing internet culture and sharing insights with the EGIRL community.',
       avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face',
       socialLinks: {
-        twitter: 'https://twitter.com/EGIRL_BSC',
+        twitter: 'https://x.com/EGIRL_BSC',
         linkedin: '#'
       }
     }
@@ -44,10 +44,11 @@ const TeamPage = () => {
 
   return (
     <>
-      <Head>
-        <title>Team - EasyGirl (EGIRL)</title>
-        <meta name="description" content="Meet the team behind EasyGirl (EGIRL) - the satirical meme token." />
-      </Head>
+      <SEO 
+        title="Team"
+        description="Meet the founder and team behind EasyGirl (EGIRL) - the satirical meme token reflecting on modern relationships."
+        url="/team"
+      />
       
       <div className="min-h-screen bg-gradient-to-br from-egirl-dark via-purple-900 to-egirl-dark">
         <Header />
