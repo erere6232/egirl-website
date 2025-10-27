@@ -55,15 +55,6 @@ const Header = () => {
             </button>
           </div>
 
-          {/* Desktop Language Toggle */}
-          <button
-            className="hidden md:flex items-center space-x-2 px-4 py-2 bg-white/10 hover:bg-white/20 rounded-lg transition-colors"
-            onClick={toggleLanguage}
-          >
-            <Globe className="w-5 h-5 text-white" />
-            <span className="text-white font-medium">{language === 'en' ? 'EN' : '中文'}</span>
-          </button>
-
           {/* Mobile menu button */}
           <button
             className="md:hidden text-white"
