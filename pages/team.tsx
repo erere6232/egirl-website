@@ -11,7 +11,7 @@ const TeamPage = () => {
       name: 'Jack Ma',
       role: 'Founder & Lead Developer',
       description: 'Jack Ma is the visionary behind EasyGirl (EGIRL) and leads the development of the project\'s smart contracts and tokenomics. Passionate about memes, blockchain, and the absurdities of modern relationships, he combines humor with technology to create a community-driven satirical token. When not coding or strategizing the next meme campaign, Jack enjoys analyzing internet culture and sharing insights with the EGIRL community.',
-      avatar: 'https://images.unsplash.com/photo-1542909168-82c3e7fdca5c?w=400&h=400&fit=crop&crop=face',
+      avatar: 'https://images.unsplash.com/photo-1557862921-37829c790f19?w=400&h=400&fit=crop&crop=face',
       socialLinks: {
         twitter: 'https://x.com/EGIRL_BSC',
         linkedin: '#'
