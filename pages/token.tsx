@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Coins, Shield, TrendingUp, Users, ExternalLink, Copy, CheckCircle, ShoppingCart, Gift, MessageCircle, Download } from 'lucide-react';
+import { Coins, Shield, TrendingUp, Users, ExternalLink, Copy, CheckCircle, ShoppingCart, Gift, Send, Download } from 'lucide-react';
 import { useState } from 'react';
 import Link from 'next/link';
 import Header from '../components/Header';
@@ -242,7 +242,7 @@ const TokenPage = () => {
                       rel="noopener noreferrer"
                       className="btn-primary inline-flex items-center w-full justify-center"
                     >
-                      <MessageCircle className="w-5 h-5 mr-2" />
+                      <Send className="w-5 h-5 mr-2" />
                       🇬🇧 English Community
                       <ExternalLink className="ml-2 w-4 h-4" />
                     </a>
@@ -252,7 +252,7 @@ const TokenPage = () => {
                       rel="noopener noreferrer"
                       className="btn-secondary inline-flex items-center w-full justify-center"
                     >
-                      <MessageCircle className="w-5 h-5 mr-2" />
+                      <Send className="w-5 h-5 mr-2" />
                       🇨🇳 中文社区
                       <ExternalLink className="ml-2 w-4 h-4" />
                     </a>
