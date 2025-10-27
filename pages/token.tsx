@@ -1,10 +1,10 @@
 import { motion } from 'framer-motion';
-import Head from 'next/head';
 import { Coins, Shield, TrendingUp, Users, ExternalLink, Copy, CheckCircle } from 'lucide-react';
 import { useState } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import TokenCard from '../components/TokenCard';
+import SEO from '../components/SEO';
 
 const TokenPage = () => {
   const [copied, setCopied] = useState(false);
@@ -52,10 +52,11 @@ const TokenPage = () => {
 
   return (
     <>
-      <Head>
-        <title>Token Information - EasyGirl (EGIRL)</title>
-        <meta name="description" content="EasyGirl (EGIRL) token information, contract details, and allocation." />
-      </Head>
+      <SEO 
+        title="Token Information"
+        description="Complete EGIRL token details, contract address, allocation, and trading information on BSC."
+        url="/token"
+      />
       
       <div className="min-h-screen bg-gradient-to-br from-egirl-dark via-purple-900 to-egirl-dark">
         <Header />
