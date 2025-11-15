@@ -105,6 +105,7 @@ const Footer = () => {
             </div>
             <div className="text-gray-300 text-sm">
               <p>Email: easygirltoken@gmail.com</p>
+              <p>Email: contact@egirl-token.vercel.app</p>
               <p>Contract: 0x2814...fb11</p>
             </div>
           </div>
