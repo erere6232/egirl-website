@@ -7,7 +7,9 @@ import SEO from '../components/SEO';
 
 const ContactPage = () => {
   const [copied, setCopied] = useState(false);
+  const [copiedEmail2, setCopiedEmail2] = useState(false);
   const email = 'easygirltoken@gmail.com';
+  const email2 = 'contact@egirl-token.vercel.app';
 
   const contactMethods = [
     {
@@ -72,6 +74,12 @@ const ContactPage = () => {
     await navigator.clipboard.writeText(email);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
+  };
+
+  const handleCopyEmail2 = async () => {
+    await navigator.clipboard.writeText(email2);
+    setCopiedEmail2(true);
+    setTimeout(() => setCopiedEmail2(false), 2000);
   };
 
   return (
@@ -209,35 +217,63 @@ const ContactPage = () => {
               <div className="text-center">
                 <h2 className="text-3xl font-bold text-white mb-6">Direct Email Contact</h2>
                 
-                <div className="bg-egirl-dark/50 rounded-2xl p-6 mb-6">
-                  <div className="flex items-center justify-center space-x-4">
-                    <Mail className="w-6 h-6 text-egirl-pink" />
-                    <code className="text-egirl-pink text-lg font-mono">{email}</code>
-                    <button
-                      onClick={handleCopyEmail}
-                      className="p-2 hover:bg-white/10 rounded-full transition-colors"
-                      title="Copy email address"
+                <div className="space-y-4 mb-6">
+                  {/* First Email */}
+                  <div className="bg-egirl-dark/50 rounded-2xl p-6">
+                    <div className="flex items-center justify-center space-x-4">
+                      <Mail className="w-6 h-6 text-egirl-pink" />
+                      <code className="text-egirl-pink text-lg font-mono">{email}</code>
+                      <button
+                        onClick={handleCopyEmail}
+                        className="p-2 hover:bg-white/10 rounded-full transition-colors"
+                        title="Copy email address"
+                      >
+                        {copied ? (
+                          <CheckCircle className="w-5 h-5 text-green-400" />
+                        ) : (
+                          <Copy className="w-5 h-5 text-gray-400 hover:text-egirl-pink" />
+                        )}
+                      </button>
+                    </div>
+                    <a
+                      href={`mailto:${email}`}
+                      className="btn-primary inline-flex items-center mt-4"
                     >
-                      {copied ? (
-                        <CheckCircle className="w-5 h-5 text-green-400" />
-                      ) : (
-                        <Copy className="w-5 h-5 text-gray-400 hover:text-egirl-pink" />
-                      )}
-                    </button>
+                      <Mail className="w-4 h-4 mr-2" />
+                      Send Email
+                    </a>
+                  </div>
+
+                  {/* Second Email */}
+                  <div className="bg-egirl-dark/50 rounded-2xl p-6">
+                    <div className="flex items-center justify-center space-x-4">
+                      <Mail className="w-6 h-6 text-egirl-pink" />
+                      <code className="text-egirl-pink text-lg font-mono">{email2}</code>
+                      <button
+                        onClick={handleCopyEmail2}
+                        className="p-2 hover:bg-white/10 rounded-full transition-colors"
+                        title="Copy email address"
+                      >
+                        {copiedEmail2 ? (
+                          <CheckCircle className="w-5 h-5 text-green-400" />
+                        ) : (
+                          <Copy className="w-5 h-5 text-gray-400 hover:text-egirl-pink" />
+                        )}
+                      </button>
+                    </div>
+                    <a
+                      href={`mailto:${email2}`}
+                      className="btn-primary inline-flex items-center mt-4"
+                    >
+                      <Mail className="w-4 h-4 mr-2" />
+                      Send Email
+                    </a>
                   </div>
                 </div>
                 
-                <p className="text-gray-300 mb-6">
+                <p className="text-gray-300">
                   For business inquiries, partnerships, or general questions about the EGIRL project.
                 </p>
-                
-                <a
-                  href={`mailto:${email}`}
-                  className="btn-primary inline-flex items-center"
-                >
-                  <Mail className="w-5 h-5 mr-2" />
-                  Send Email
-                </a>
               </div>
             </motion.div>
 
