@@ -4,6 +4,7 @@ import { ArrowRight, Coins, Users, TrendingUp, Zap, Heart, Brain, Shield, Gift, 
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import TokenCard from '../components/TokenCard';
+import LiveMarket from '../components/LiveMarket';
 import SEO from '../components/SEO';
 import { useLanguage } from '../contexts/LanguageContext';
 
@@ -337,6 +338,9 @@ const HomePage = () => {
                 />
               ))}
             </motion.div>
+
+            {/* Live Market Section */}
+            <LiveMarket />
 
             {/* Core Philosophy */}
             <motion.div
