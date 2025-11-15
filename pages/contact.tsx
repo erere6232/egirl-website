@@ -218,33 +218,7 @@ const ContactPage = () => {
                 <h2 className="text-3xl font-bold text-white mb-6">Direct Email Contact</h2>
                 
                 <div className="space-y-4 mb-6">
-                  {/* First Email */}
-                  <div className="bg-egirl-dark/50 rounded-2xl p-6">
-                    <div className="flex items-center justify-center space-x-4">
-                      <Mail className="w-6 h-6 text-egirl-pink" />
-                      <code className="text-egirl-pink text-lg font-mono">{email}</code>
-                      <button
-                        onClick={handleCopyEmail}
-                        className="p-2 hover:bg-white/10 rounded-full transition-colors"
-                        title="Copy email address"
-                      >
-                        {copied ? (
-                          <CheckCircle className="w-5 h-5 text-green-400" />
-                        ) : (
-                          <Copy className="w-5 h-5 text-gray-400 hover:text-egirl-pink" />
-                        )}
-                      </button>
-                    </div>
-                    <a
-                      href={`mailto:${email}`}
-                      className="btn-primary inline-flex items-center mt-4"
-                    >
-                      <Mail className="w-4 h-4 mr-2" />
-                      Send Email
-                    </a>
-                  </div>
-
-                  {/* Second Email */}
+                  {/* First Email - contact@egirl-token.vercel.app */}
                   <div className="bg-egirl-dark/50 rounded-2xl p-6">
                     <div className="flex items-center justify-center space-x-4">
                       <Mail className="w-6 h-6 text-egirl-pink" />
@@ -263,6 +237,32 @@ const ContactPage = () => {
                     </div>
                     <a
                       href={`mailto:${email2}`}
+                      className="btn-primary inline-flex items-center mt-4"
+                    >
+                      <Mail className="w-4 h-4 mr-2" />
+                      Send Email
+                    </a>
+                  </div>
+
+                  {/* Second Email - easygirltoken@gmail.com */}
+                  <div className="bg-egirl-dark/50 rounded-2xl p-6">
+                    <div className="flex items-center justify-center space-x-4">
+                      <Mail className="w-6 h-6 text-egirl-pink" />
+                      <code className="text-egirl-pink text-lg font-mono">{email}</code>
+                      <button
+                        onClick={handleCopyEmail}
+                        className="p-2 hover:bg-white/10 rounded-full transition-colors"
+                        title="Copy email address"
+                      >
+                        {copied ? (
+                          <CheckCircle className="w-5 h-5 text-green-400" />
+                        ) : (
+                          <Copy className="w-5 h-5 text-gray-400 hover:text-egirl-pink" />
+                        )}
+                      </button>
+                    </div>
+                    <a
+                      href={`mailto:${email}`}
                       className="btn-primary inline-flex items-center mt-4"
                     >
                       <Mail className="w-4 h-4 mr-2" />
