@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { ArrowRight, Coins, Users, TrendingUp, Zap, Heart, Brain, Shield, Gift, Download, ShoppingCart, MessageCircle, ExternalLink, Send } from 'lucide-react';
+import { ArrowRight, Coins, Users, TrendingUp, Zap, Heart, Brain, Shield, Gift, Download, ShoppingCart, MessageCircle, ExternalLink, Send, Twitter, Wallet, CheckCircle2, Clock, TrendingUp as TrendingUpIcon } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import TokenCard from '../components/TokenCard';
@@ -75,80 +75,190 @@ const HomePage = () => {
         >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="bg-gradient-to-r from-egirl-pink/20 via-egirl-purple/20 to-egirl-cyan/20 backdrop-blur-lg border-2 border-egirl-pink rounded-3xl p-8 shadow-2xl">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                <div className="text-center md:text-left">
+              {/* Header with Title and Stats */}
+              <div className="text-center mb-8">
+                <motion.div
+                  animate={{ 
+                    scale: [1, 1.05, 1],
+                    rotate: [0, 5, -5, 0]
+                  }}
+                  transition={{ 
+                    duration: 2,
+                    repeat: Infinity,
+                    repeatDelay: 2
+                  }}
+                  className="inline-block mb-4"
+                >
+                  <Gift className="w-16 h-16 text-egirl-pink mx-auto" />
+                </motion.div>
+                <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                  <span className="gradient-text">{t('airdrop.title')}</span> 🎁
+                </h2>
+                
+                {/* Stats and Deadline */}
+                <div className="flex flex-wrap justify-center gap-6 mb-6">
                   <motion.div
-                    animate={{ 
-                      scale: [1, 1.05, 1],
-                      rotate: [0, 5, -5, 0]
-                    }}
-                    transition={{ 
-                      duration: 2,
-                      repeat: Infinity,
-                      repeatDelay: 2
-                    }}
-                    className="inline-block mb-4"
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    transition={{ delay: 0.3, type: "spring" }}
+                    className="bg-white/10 rounded-xl px-6 py-3 backdrop-blur-sm border border-egirl-pink/30"
                   >
-                    <Gift className="w-16 h-16 text-egirl-pink mx-auto md:mx-0" />
+                    <div className="flex items-center gap-2">
+                      <CheckCircle2 className="w-5 h-5 text-green-400" />
+                      <span className="text-white">
+                        <span className="text-sm">{t('airdrop.stats')}</span>
+                        <span className="text-2xl font-bold text-egirl-pink mx-1">1,000</span>
+                        <span className="text-sm">{t('airdrop.stats.people')}</span>
+                      </span>
+                    </div>
                   </motion.div>
-                  <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                    <span className="gradient-text">{t('airdrop.title')}</span> 🎁
-                  </h2>
-                  <p className="text-xl text-white mb-6">
-                    {t('airdrop.description')} <span className="font-bold text-egirl-pink text-2xl">500-1,000 EGIRL</span> tokens for FREE!
-                  </p>
-                  <div className="flex flex-col sm:flex-row gap-4">
-                    <a
-                      href="https://t.me/+VdZHL9gqOF5lNTI1"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="btn-primary inline-flex items-center justify-center group"
+                  
+                  <motion.div
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    transition={{ delay: 0.4, type: "spring" }}
+                    className="bg-white/10 rounded-xl px-6 py-3 backdrop-blur-sm border border-yellow-400/30"
+                  >
+                    <div className="flex items-center gap-2">
+                      <Clock className="w-5 h-5 text-yellow-400 animate-pulse" />
+                      <span className="text-white text-sm md:text-base">{t('airdrop.deadline')}</span>
+                    </div>
+                  </motion.div>
+                </div>
+              </div>
+
+              {/* Main Content Grid */}
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
+                {/* Steps Section */}
+                <div className="lg:col-span-2">
+                  <h3 className="text-2xl font-bold text-white mb-6 text-center lg:text-left">
+                    {t('airdrop.steps.title')}
+                  </h3>
+                  <div className="space-y-4">
+                    {/* Step 1 */}
+                    <motion.div
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 0.5 }}
+                      className="bg-white/10 rounded-xl p-5 backdrop-blur-sm border border-white/20 hover:border-egirl-pink/50 transition-all group"
                     >
-                      <Gift className="w-5 h-5 mr-2 animate-bounce" />
-                      {t('airdrop.claim')}
-                      <ExternalLink className="ml-2 w-4 h-4" />
-                    </a>
-                    <a
-                      href="https://pancakeswap.finance/swap?outputCurrency=0x2814cdae605eeb2e7755ee7aad38da9facfafb11"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="btn-secondary inline-flex items-center justify-center"
+                      <div className="flex items-start gap-4">
+                        <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
+                          <Twitter className="w-6 h-6 text-white" />
+                        </div>
+                        <div className="flex-1">
+                          <div className="flex items-center gap-2 mb-2">
+                            <span className="text-sm font-semibold text-egirl-pink">Step 1</span>
+                            <h4 className="text-lg font-semibold text-white">{t('airdrop.step1')}</h4>
+                          </div>
+                          <p className="text-gray-300 text-sm mb-3">{t('airdrop.step1.desc')}</p>
+                          <a
+                            href="https://x.com/EGIRL_BSC"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center text-sm text-egirl-pink hover:text-egirl-cyan transition-colors group-hover:underline"
+                          >
+                            Follow Now <ExternalLink className="w-4 h-4 ml-1" />
+                          </a>
+                        </div>
+                      </div>
+                    </motion.div>
+
+                    {/* Step 2 */}
+                    <motion.div
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 0.6 }}
+                      className="bg-white/10 rounded-xl p-5 backdrop-blur-sm border border-white/20 hover:border-egirl-pink/50 transition-all group"
                     >
-                      <ShoppingCart className="w-5 h-5 mr-2" />
-                      {t('buy.now.short')}
-                      <ExternalLink className="ml-2 w-4 h-4" />
-                    </a>
+                      <div className="flex items-start gap-4">
+                        <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-blue-700 rounded-full flex items-center justify-center flex-shrink-0">
+                          <Send className="w-6 h-6 text-white" />
+                        </div>
+                        <div className="flex-1">
+                          <div className="flex items-center gap-2 mb-2">
+                            <span className="text-sm font-semibold text-egirl-pink">Step 2</span>
+                            <h4 className="text-lg font-semibold text-white">{t('airdrop.step2')}</h4>
+                          </div>
+                          <p className="text-gray-300 text-sm mb-3">{t('airdrop.step2.desc')}</p>
+                          <div className="flex flex-wrap gap-2">
+                            <a
+                              href="https://t.me/+VdZHL9gqOF5lNTI1"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center text-sm text-egirl-pink hover:text-egirl-cyan transition-colors group-hover:underline"
+                            >
+                              🇬🇧 English <ExternalLink className="w-4 h-4 ml-1" />
+                            </a>
+                            <span className="text-gray-500">|</span>
+                            <a
+                              href="https://t.me/+N7FUuuYJIdQyMjFl"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center text-sm text-egirl-pink hover:text-egirl-cyan transition-colors group-hover:underline"
+                            >
+                              🇨🇳 中文 <ExternalLink className="w-4 h-4 ml-1" />
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </motion.div>
+
+                    {/* Step 3 */}
+                    <motion.div
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 0.7 }}
+                      className="bg-white/10 rounded-xl p-5 backdrop-blur-sm border border-white/20 hover:border-egirl-pink/50 transition-all group"
+                    >
+                      <div className="flex items-start gap-4">
+                        <div className="w-12 h-12 bg-gradient-to-r from-egirl-pink to-egirl-purple rounded-full flex items-center justify-center flex-shrink-0">
+                          <Wallet className="w-6 h-6 text-white" />
+                        </div>
+                        <div className="flex-1">
+                          <div className="flex items-center gap-2 mb-2">
+                            <span className="text-sm font-semibold text-egirl-pink">Step 3</span>
+                            <h4 className="text-lg font-semibold text-white">{t('airdrop.step3')}</h4>
+                          </div>
+                          <p className="text-gray-300 text-sm">{t('airdrop.step3.desc')}</p>
+                        </div>
+                      </div>
+                    </motion.div>
                   </div>
                 </div>
-                <div className="text-center">
-                  <div className="bg-white/10 rounded-2xl p-8 backdrop-blur-sm">
-                    <h3 className="text-2xl font-bold text-white mb-6">Quick Links</h3>
+
+                {/* Action Buttons Sidebar */}
+                <div className="lg:col-span-1">
+                  <div className="bg-white/10 rounded-2xl p-6 backdrop-blur-sm border border-white/20 h-full flex flex-col justify-center">
+                    <h3 className="text-xl font-bold text-white mb-6 text-center">{t('airdrop.quick.actions')}</h3>
                     <div className="space-y-4">
-                      <Link
-                        href="/whitepaper"
-                        className="block bg-gradient-to-r from-blue-500 to-blue-600 text-white py-3 px-6 rounded-lg hover:shadow-lg transition-all"
-                      >
-                        <Download className="w-5 h-5 inline mr-2" />
-                        Whitepaper
-                      </Link>
                       <a
                         href="https://t.me/+VdZHL9gqOF5lNTI1"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="block bg-gradient-to-r from-blue-500 to-blue-700 text-white py-3 px-6 rounded-lg hover:shadow-lg transition-all mb-3"
+                        className="btn-primary w-full inline-flex items-center justify-center group"
                       >
-                        <Send className="w-5 h-5 inline mr-2" />
-                        🇬🇧 English Community
+                        <Gift className="w-5 h-5 mr-2 animate-bounce" />
+                        {t('airdrop.claim')}
+                        <ExternalLink className="ml-2 w-4 h-4" />
                       </a>
                       <a
-                        href="https://t.me/+N7FUuuYJIdQyMjFl"
+                        href="https://pancakeswap.finance/swap?outputCurrency=0x2814cdae605eeb2e7755ee7aad38da9facfafb11"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="block bg-gradient-to-r from-green-500 to-green-600 text-white py-3 px-6 rounded-lg hover:shadow-lg transition-all"
+                        className="btn-secondary w-full inline-flex items-center justify-center"
                       >
-                        <Send className="w-5 h-5 inline mr-2" />
-                        🇨🇳 中文社区
+                        <ShoppingCart className="w-5 h-5 mr-2" />
+                        {t('buy.now.short')}
+                        <ExternalLink className="ml-2 w-4 h-4" />
                       </a>
+                      <Link
+                        href="/whitepaper"
+                        className="block bg-gradient-to-r from-blue-500 to-blue-600 text-white py-3 px-6 rounded-lg hover:shadow-lg transition-all text-center"
+                      >
+                        <Download className="w-5 h-5 inline mr-2" />
+                        Whitepaper
+                      </Link>
                     </div>
                   </div>
                 </div>
